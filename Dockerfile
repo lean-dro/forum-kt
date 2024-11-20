@@ -5,13 +5,13 @@ WORKDIR /builder
 
 COPY . .
 
-RUN mvn clear package -DskipTests -Dcheckstyle.skip=true
+RUN mvn clean package -DskipTests -Dcheckstyle.skip=true
 
 FROM openjdk:17-slim
 
 WORKDIR /app
 
-COPY --from=builder /build/target/*.jar /app/app.jar
+COPY --from=builder /builder/target/*.jar /app/app.jar
 
-CMD [ "executable" ]
+CMD [ "java", "-jar", "app.jar" ]
 
