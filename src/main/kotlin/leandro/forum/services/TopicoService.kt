@@ -3,9 +3,9 @@ package leandro.forum.services
 
 import leandro.forum.adapters.toDto
 import leandro.forum.adapters.toModel
-import leandro.forum.dto.topico.TopicoRequest
-import leandro.forum.dto.topico.TopicoRequestUpdate
-import leandro.forum.dto.topico.TopicoResponse
+import leandro.forum.dto.request.TopicoRequest
+import leandro.forum.dto.request.TopicoRequestUpdate
+import leandro.forum.dto.response.TopicoResponse
 import leandro.forum.extensions.existe
 import leandro.forum.model.Topico
 import leandro.forum.repository.TopicoRepository
@@ -36,7 +36,7 @@ class TopicoService(@Autowired private val repository: TopicoRepository,
 
         return ResponseEntity.status(201).body(toDto(novoTopico))
     }
-    fun atualizarTopico(topicoRequest: TopicoRequestUpdate,id:Int):ResponseEntity<TopicoResponse>{
+    fun atualizarTopico(topicoRequest: TopicoRequestUpdate, id:Int):ResponseEntity<TopicoResponse>{
         val topico = buscarTopico(id)
         topico.let {
             it.titulo = topicoRequest.titulo

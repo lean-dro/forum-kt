@@ -1,11 +1,11 @@
 package leandro.forum.adapters
 
-import leandro.forum.dto.topico.TopicoRequest
-import leandro.forum.dto.topico.TopicoResponse
+import leandro.forum.dto.request.TopicoRequest
+import leandro.forum.dto.response.TopicoResponse
 import leandro.forum.model.Topico
 import leandro.forum.model.Usuario
 
-fun toDto(topicoModel:Topico):TopicoResponse{
+fun toDto(topicoModel:Topico): TopicoResponse {
     return TopicoResponse(
         titulo = topicoModel.titulo,
         conteudo = topicoModel.conteudo,

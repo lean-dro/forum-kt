@@ -1,8 +1,8 @@
 package leandro.forum.controllers
 
 import leandro.forum.adapters.toDTO
-import leandro.forum.dto.usuario.UsuarioRequest
-import leandro.forum.dto.usuario.UsuarioResponse
+import leandro.forum.dto.request.UsuarioRequest
+import leandro.forum.dto.response.UsuarioResponse
 import leandro.forum.services.UsuarioService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
@@ -20,7 +20,7 @@ class UsuarioController(@Autowired val service:UsuarioService) {
         return ResponseEntity.status(200).body(toDTO(service.buscarUsuario(id)))
     }
     @PostMapping
-    fun criarUsuario(@RequestBody novoUsuario:UsuarioRequest): ResponseEntity<UsuarioResponse> {
+    fun criarUsuario(@RequestBody novoUsuario: UsuarioRequest): ResponseEntity<UsuarioResponse> {
         return service.criarUsuario(novoUsuario)
     }
 

@@ -2,8 +2,8 @@ package leandro.forum.services
 
 import leandro.forum.adapters.toDTO
 import leandro.forum.adapters.toModel
-import leandro.forum.dto.usuario.UsuarioRequest
-import leandro.forum.dto.usuario.UsuarioResponse
+import leandro.forum.dto.request.UsuarioRequest
+import leandro.forum.dto.response.UsuarioResponse
 import leandro.forum.extensions.existe
 import leandro.forum.model.Usuario
 import leandro.forum.repository.UsuarioRepository
@@ -27,7 +27,7 @@ class UsuarioService(@Autowired private val repository:UsuarioRepository) {
         return ResponseEntity.status(200).body(toDTO(busca))
     }
 
-    fun criarUsuario(usuario:UsuarioRequest):ResponseEntity <UsuarioResponse> {
+    fun criarUsuario(usuario: UsuarioRequest):ResponseEntity <UsuarioResponse> {
        val novoUsuario =  this.repository.save(
            toModel(usuario)
        )

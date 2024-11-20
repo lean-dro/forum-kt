@@ -1,4 +1,4 @@
-package leandro.forum.dto.topico
+package leandro.forum.dto.request
 
 data class TopicoRequest(val titulo:String, val conteudo:String, val idUsuario: Int )
 

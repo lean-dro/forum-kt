@@ -1,4 +1,4 @@
-package leandro.forum.dto.usuario
+package leandro.forum.dto.request
 
 import java.time.LocalDate
 

@@ -1,9 +1,9 @@
 package leandro.forum.controllers
 
 import leandro.forum.adapters.toDto
-import leandro.forum.dto.topico.TopicoRequest
-import leandro.forum.dto.topico.TopicoRequestUpdate
-import leandro.forum.dto.topico.TopicoResponse
+import leandro.forum.dto.request.TopicoRequest
+import leandro.forum.dto.request.TopicoRequestUpdate
+import leandro.forum.dto.response.TopicoResponse
 import leandro.forum.services.TopicoService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
@@ -21,11 +21,11 @@ class TopicoController(@Autowired val service: TopicoService) {
         return ResponseEntity.status(200).body(toDto(service.buscarTopico(id)))
     }
     @PostMapping
-    fun criarTopico(@RequestBody novoTopico:TopicoRequest):ResponseEntity<TopicoResponse>{
+    fun criarTopico(@RequestBody novoTopico: TopicoRequest):ResponseEntity<TopicoResponse>{
         return service.criarTopico(novoTopico)
     }
     @PutMapping("/{id}")
-    fun atualizarTopico(@RequestBody topicoAtualizado:TopicoRequestUpdate, @PathVariable id: Int): ResponseEntity<TopicoResponse> {
+    fun atualizarTopico(@RequestBody topicoAtualizado: TopicoRequestUpdate, @PathVariable id: Int): ResponseEntity<TopicoResponse> {
         return service.atualizarTopico(topicoAtualizado, id)
     }
     @DeleteMapping("/{id}")

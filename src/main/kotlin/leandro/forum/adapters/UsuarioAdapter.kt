@@ -1,7 +1,7 @@
 package leandro.forum.adapters
 
-import leandro.forum.dto.usuario.UsuarioRequest
-import leandro.forum.dto.usuario.UsuarioResponse
+import leandro.forum.dto.request.UsuarioRequest
+import leandro.forum.dto.response.UsuarioResponse
 import leandro.forum.model.Usuario
 
 fun toDTO(usuarioModel: Usuario): UsuarioResponse {
