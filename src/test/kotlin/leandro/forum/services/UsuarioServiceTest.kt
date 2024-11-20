@@ -17,7 +17,6 @@ import kotlin.test.assertEquals
 
 
 class UsuarioServiceTest{
-    @Mock
     lateinit var usuarioRepository: UsuarioRepository
     lateinit var usuarioService: UsuarioService
     @BeforeEach

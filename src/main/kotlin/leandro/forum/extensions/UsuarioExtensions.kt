@@ -8,5 +8,7 @@ import java.util.*
 
 
 fun Optional<Usuario>.existe(){
-    if (this.isEmpty) throw RecursoNaoEncontradoException("Usuário")
+    if (this.isEmpty) {
+        throw RecursoNaoEncontradoException("Usuário")
+    }
 }
